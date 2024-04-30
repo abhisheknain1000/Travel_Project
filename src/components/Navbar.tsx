@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -10,6 +11,8 @@ import adminLogo from '../../public/Image/user.svg';
 import menu from '../../public/Image/menu.svg';
 
 const Navbar = () => {
+ 
+  
   return (
     <nav className='regular-16 flexBetween max-container padding-container relative z-30 py-5'>
       <Link href="/">
@@ -38,13 +41,18 @@ const Navbar = () => {
                 />
       </div>
       <div className='lg:hidden'>
-        <Image src={menu} alt='menu' width={32} height={32}
-        className='inline-block cursor-pointer lg:hidden '
+        <Image src={menu} 
+        alt='menu' 
+        width={32} 
+        height={32}
+        onClick={()=><Link href='/'></Link>}
+     
         />
       </div>
 
     </nav>
   )
 }
+
 
 export default Navbar
